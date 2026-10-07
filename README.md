@@ -34,7 +34,7 @@ Planned approach: RAG (retrieval-augmented generation).
 
 1. Read the text of each leaflet PDF and cut it into small parts.
 2. For each question, find the parts of the leaflet that are most relevant.
-3. Send the question and those parts to an LLM, which answers using only    that text and returns JSON.
+3. Send the question and those parts to an LLM, which answers using only that text and returns JSON.
 4. Measure the quality on a test set of questions with expected answers.
 
 ## Results
@@ -46,14 +46,33 @@ Coming soon.
 ```
 easy-leaflet/
 ├── data/              leaflets.csv (the PDFs go here, not in Git)
+├── docs/              API_KEY.md (how to get and protect the API key)
 ├── src/easy_leaflet/  Python package
 ├── tests/             PyTest tests
+├── .env.example       shows which secret the project needs
 └── README.md
 ```
 
 ## How to run
 
-Coming soon.
+The app is not finished, but you can already set up the project.
+
+1. Clone the repository and open the folder.
+2. Create a virtual environment and install the project (Windows PowerShell):
+
+   ```
+   python -m venv .venv
+   .venv\Scripts\Activate.ps1
+   pip install -e .
+   ```
+
+3. Download the leaflet PDFs listed in [`data/leaflets.csv`](data/leaflets.csv) and save them in `data/` with the names from the `name` column.
+4. Create a free Gemini API key in [Google AI Studio](https://aistudio.google.com/api-keys). No credit card is needed.
+5. Copy `.env.example` to a new file called `.env` and paste your key in it.
+
+The full guide for steps 4 and 5, with the free limits and the safety rules, is in [`docs/API_KEY.md`](docs/API_KEY.md).
+
+More steps will come when the app is ready.
 
 ## License
 
