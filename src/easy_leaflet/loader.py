@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from pypdf import PdfReader
-
+import pdfplumber
 
 @dataclass
 class Leaflet:
@@ -33,10 +33,10 @@ class LeafletLoader:
             raise FileNotFoundError(f"Leaflet not found: {path}")
 
         # 3. Open the PDF and get the text of each page
-        reader = PdfReader(path)
         pages = []
-        for page in reader.pages:
-            pages.append(page.extract_text())
+        with pdfplumber.open(path) as pdf:
+            for page in pdf.pages:
+                pages.append(page.extract_text() or "")
 
         # 4. Join the pages into one string and return a Leaflet
         text = "\n".join(pages)
