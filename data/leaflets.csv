@@ -1,0 +1,7 @@
+name,medicine,active_substance,leaflet_date,source,url,downloaded_on
+benuron,Ben-u-ron 500 mg comprimidos,paracetamol,2026-03,manufacturer,https://ben-u-ron.pt/ben-u-ron-500mg-folhetos-informativos/,2026-10-07
+brufen,Brufen 200 mg comprimidos revestidos por película,ibuprofeno,unknown,infomed,https://extranet.infarmed.pt/INFOMED-fo/download-ficheiro.xhtml?med_id=1257&tipo_doc=fi,2026-10-07
+cegripe,Cêgripe 500 mg + 1 mg comprimidos,paracetamol + clorofenamina,2025-02,infomed,https://extranet.infarmed.pt/INFOMED-fo/download-ficheiro.xhtml?med_id=44633&tipo_doc=fi,2026-10-07
+imodium,Imodium Rapid 2 mg comprimido orodispersível,loperamida,unknown,infomed,https://extranet.infarmed.pt/INFOMED-fo/download-ficheiro.xhtml?med_id=4444&tipo_doc=fi,2026-10-07
+minigeste,"Minigeste 0,02 mg + 0,075 mg comprimido revestido",etinilestradiol + gestodeno,2021-12,manufacturer,https://bag-p-001.sitecorecontenthub.cloud/api/public/content/minigeste-fi-1660ce7141064434a178a647f719107c,2026-10-07
+zolpidem,Zolpidem Aurovitas 10 mg comprimidos revestidos por película,zolpidem,2021-11,third-party site,https://medikamio.com/downloads/pt-pt/drugs/zolpidem-aurovitas.pdf,2026-10-07
