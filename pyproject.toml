@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "easy-leaflet"
 version = "0.1.0"
 requires-python = ">=3.10"
-dependencies = ["pdfplumber", "google-genai", "python-dotenv", "sentence-transformers"]
+dependencies = ["pdfplumber", "google-genai", "python-dotenv", "sentence-transformers", "pydantic"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
