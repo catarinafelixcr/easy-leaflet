@@ -15,41 +15,23 @@ for name in loader.list_names():
 retriever = Retriever()
 retriever.index(chunks)
 
-# Ask a question
+# Create the assistant one time
 assistant = LeafletAssistant(retriever, LLMClient())
-question = "Posso beber álcool?"
-answer = assistant.answer(question, leaflet_name="benuron")
-print()
-print("PERGUNTA:", question)
-print("RESPOSTA:", answer.text)
-print()
-print("EXCERTOS USADOS:")
-for chunk in answer.chunks:
-    print("-", chunk.leaflet_name, chunk.index)
-#print(assistant.build_prompt(question, answer.chunks))
 
-# Ask a question
-assistant = LeafletAssistant(retriever, LLMClient())
-question = "Posso conduzir depois de tomar?"
-answer = assistant.answer(question, leaflet_name="zolpidem")
-print()
-print("PERGUNTA:", question)
-print("RESPOSTA:", answer.text)
-print()
-print("EXCERTOS USADOS:")
-for chunk in answer.chunks:
-    print("-", chunk.leaflet_name, chunk.index)
-#print(assistant.build_prompt(question, answer.chunks))
+# The questions to try: (question, leaflet)
+questions = [
+    ("Posso beber álcool?", "benuron"),
+    ("Posso conduzir depois de tomar?", "zolpidem"),
+    ("Quanto custa a embalagem?", "benuron"),
+]
 
-# Ask a question
-assistant = LeafletAssistant(retriever, LLMClient())
-question = "Quanto custa a embalagem?"
-answer = assistant.answer(question, leaflet_name="benuron")
-print()
-print("PERGUNTA:", question)
-print("RESPOSTA:", answer.text)
-print()
-print("EXCERTOS USADOS:")
-for chunk in answer.chunks:
-    print("-", chunk.leaflet_name, chunk.index)
-#print(assistant.build_prompt(question, answer.chunks))
+for question, leaflet_name in questions:
+    answer = assistant.answer(question, leaflet_name=leaflet_name)
+
+    print()
+    print("PERGUNTA:", question, f"({leaflet_name})")
+    print("ENCONTRADO:", answer.found)
+    print("RESPOSTA:", answer.text)
+    print("FONTES USADAS:")
+    for chunk in answer.sources:
+        print("-", chunk.leaflet_name, chunk.index)
