@@ -77,5 +77,27 @@ def test_search_uses_the_chosen_leaflet():
     assert retriever.last_leaflet_name == "zolpidem"
 
 
-# TODO: your test
 # def test_excerpt_number_out_of_range_is_ignored():
+"""
+def test_excerpt_number_out_of_range_is_ignored():
+    chunks = make_chunks()
+    # The LLM says it used excerpt 1 and excerpt 7, but there are only 4
+    llm = FakeLLM('{"found": true, "answer": "Não beba álcool.", "excerpts": [1, 7]}')
+    assistant = LeafletAssistant(FakeRetriever(chunks), llm)
+
+    answer = assistant.answer("Posso beber álcool?", leaflet_name="benuron")
+
+    # Excerpt 7 is ignored, so only excerpt 1 (chunks[0]) is kept
+    assert answer.sources == [chunks[0]]
+"""
+
+def test_excerpt_number_out_of_range_is_ignored():
+    chunks = make_chunks()
+    # The LLM says it used excerpt 1 and excerpt 7, but there are only 4
+    llm = FakeLLM('{"found": true, "answer": "Não beba álcool.", "excerpts": [1, 7]}')
+    assistant = LeafletAssistant(FakeRetriever(chunks), llm)
+
+    answer = assistant.answer("Posso beber álcool?", leaflet_name="benuron")
+
+    # Excerpt 7 is ignored, so only excerpt 1 (chunks[0]) is kept
+    assert answer.sources == [chunks[0]]
