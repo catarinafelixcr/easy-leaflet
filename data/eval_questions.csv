@@ -1,0 +1,31 @@
+id,leaflet,topic,question,answerable,keywords,source
+1,benuron,alcohol,Posso beber vinho enquanto tomo ben-u-ron?,yes,álcool,Não beba álcool durante o tratamento com ben-u-ron®.
+2,benuron,children,A partir de que idade o meu filho pode tomar ben-u-ron 500?,yes,12 anos,ben-u-ron® 500 mg não é adequado para o tratamento de crianças com idade inferior a 12 anos
+3,benuron,package,Quantos comprimidos vêm na caixa?,yes,20 comprimidos,está disponível em embalagens de 20 comprimidos
+4,benuron,storage,A que temperatura devo guardar os comprimidos?,yes,25,Não conservar acima de 25 ºC.
+5,benuron,not_in_leaflet,Quanto custa uma embalagem?,no,,
+6,brufen,dose,Quanto tempo tenho de esperar entre dois comprimidos de Brufen?,yes,4 horas|quatro horas,Espere pelo menos 4 horas entre as tomas.
+7,brufen,dose,Quantos comprimidos de Brufen posso tomar no máximo por dia?,yes,6 comprimidos|seis comprimidos|1200|1.200,A dose total não deve exceder 1.200 mg de ibuprofeno num período de 24 horas.
+8,brufen,pregnancy,Estou grávida de 8 meses. Posso tomar Brufen?,yes,últimos 3 meses|últimos três meses|terceiro trimestre,"Não tome este medicamento nos últimos 3 meses de gravidez, uma vez que pode ser prejudicial para o feto ou causar problemas no parto."
+9,brufen,food,Devo tomar o Brufen antes ou depois de comer?,yes,vazio,"De modo a atingir um efeito máximo mais rápido, Brufen deve ser administrado com o estômago vazio."
+10,brufen,not_in_leaflet,O Brufen é melhor do que o ben-u-ron para as dores de cabeça?,no,,
+11,cegripe,driving,Posso conduzir depois de tomar Cêgripe?,yes,sonolência,Cêgripe provoca sonolência. Recomenda-se precaução ao conduzir ou ao utilizar máquinas.
+12,cegripe,children,O meu filho tem 10 anos. Pode tomar Cêgripe?,yes,12 anos|doze anos,Cêgripe não é recomendado em crianças com idade inferior a 12 anos ou com peso inferior a 30 kg.
+13,cegripe,dose,Quantos comprimidos de Cêgripe posso tomar por dia?,yes,6 comprimidos|seis comprimidos,A dose recomendada é 1 a 2 comprimidos a cada 6 horas não excedendo o máximo de 6 comprimidos por dia
+14,cegripe,alcohol,Posso beber uma cerveja enquanto tomo Cêgripe?,yes,alcoólicas|álcool,"Portanto, não deve tomar bebidas alcoólicas enquanto durar o tratamento."
+15,cegripe,not_in_leaflet,Quantos minutos demora o Cêgripe a fazer efeito?,no,,
+16,imodium,children,Posso dar Imodium Rapid ao meu filho de 4 anos?,yes,6 anos|seis anos,Não deve dar o Imodium Rapid a crianças com menos de 6 anos de idade.
+17,imodium,how_to_take,Tenho de engolir o Imodium Rapid com água?,yes,língua,"para serem colocados na língua, onde se desfazem. Portanto, não deve tomar este medicamento com um líquido."
+18,imodium,dose,Qual é o número máximo de comprimidos de Imodium Rapid por dia?,yes,8 comprimidos|oito comprimidos,Não tome mais do que 8 comprimidos num período de 24 horas.
+19,imodium,storage,A que temperatura devo guardar o Imodium Rapid?,yes,30,Não conservar acima de 30ºC.
+20,imodium,not_in_leaflet,Qual é a farmácia mais barata para comprar Imodium Rapid?,no,,
+21,minigeste,forgotten_dose,"Esqueci-me de tomar a pílula ontem à noite e só me lembrei agora, 8 horas depois. A pílula continua a proteger?",yes,12 horas|doze horas|fiabilidade,"Se estiver menos de 12 horas atrasada na toma do comprimido, a fiabilidade da pílula é mantida."
+22,minigeste,forgotten_dose,Esqueci-me de um comprimido na primeira semana da embalagem. Preciso de usar preservativo?,yes,7 dias|sete dias|barreira,Tome precauções contracetivas adicionais (método de barreira) durante os 7 dias seguintes.
+23,minigeste,vomiting,Vomitei duas horas depois de tomar a pílula. O que faço?,yes,esquec,"Se vomitar nas 3 a 4 horas após tomar o comprimido, é como se esquecesse de tomar um comprimido."
+24,minigeste,smoking,Fumo e tenho 38 anos. Posso tomar Minigeste?,yes,35|diferente,"Se for incapaz de parar de fumar e tiver mais de 35 anos, o seu médico poderá aconselhá-la a utilizar um tipo diferente de contracetivo;"
+25,minigeste,not_in_leaflet,A Minigeste é comparticipada pelo SNS?,no,,
+26,zolpidem,driving,Quantas horas tenho de esperar para conduzir depois de tomar?,yes,8 horas|oito horas,Recomenda-se um período de pelo menos 8 horas entre a toma de zolpidem e a condução
+27,zolpidem,breastfeeding,Posso tomar zolpidem se estiver a dar de mamar?,yes,amament|leite,"Por ter sido encontrado no leite materno, ainda que em quantidades pequenas, o Zolpidem Aurovitas não deve ser administrado a mulheres que estejam a amamentar."
+28,zolpidem,dose,"Se não conseguir dormir, posso tomar outro comprimido na mesma noite?",yes,10 mg|outra dose|toma única,Não tome outra dose durante a mesma noite.
+29,zolpidem,duration,Durante quanto tempo posso tomar zolpidem?,yes,quatro semanas|4 semanas,Em geral o tratamento dura um máximo de quatro semanas incluindo a fase de redução gradual.
+30,zolpidem,not_in_leaflet,Qual é a melhor marca de zolpidem?,no,,
