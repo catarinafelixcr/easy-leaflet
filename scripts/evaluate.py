@@ -25,22 +25,22 @@ questions = pd.read_csv("data/eval_questions.csv", encoding="utf-8")
 results = Evaluator(assistant).run(questions)
 
 # Summary
-answerable = results[results["answerable"]]
-not_answerable = results[~results["answerable"]]
+# Questions with API errors were never answered, so they are not counted
+errors = results["error"].sum()
+valid = results[~results["error"]]
+answerable = valid[valid["answerable"]]
+not_answerable = valid[~valid["answerable"]]
 
 print()
 print("=== RESULTS: prompt v1 ===")
-print(f"Accuracy:           {results['correct'].mean():.0%}  ({results['correct'].sum()} of {len(results)})")
+print(f"API errors:         {errors} of {len(results)} (not counted below)")
+if errors > 0:
+    print("WARNING: some questions failed. Run again before trusting these numbers.")
+print(f"Accuracy:           {valid['correct'].mean():.0%}  ({valid['correct'].sum()} of {len(valid)})")
 print(f"Answerable:         {answerable['correct'].mean():.0%}")
 print(f"Not in leaflet:     {not_answerable['correct'].mean():.0%}")
 print(f"Retrieval hit rate: {answerable['retrieval_hit'].astype(float).mean():.0%}")
 print()
-print("Accuracy by leaflet:")
-print(results.groupby("leaflet")["correct"].mean().round(2))
-print()
-print("Wrong answers:")
-for row in results[~results["correct"]].itertuples():
-    print(f"- [{row.id}] {row.leaflet}: {row.question}")
 
 # Save everything, to read it later
 Path("results").mkdir(exist_ok=True)

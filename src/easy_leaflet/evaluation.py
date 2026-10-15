@@ -54,7 +54,7 @@ class Evaluator:
 
         return {
             "found": answer.found, "correct": correct, "retrieval_hit": retrieval_hit,
-            "answer": answer.text, "sources": sources,
+            "answer": answer.text, "sources": sources, "error": False,
         }
 
     def run(self, questions):
@@ -72,8 +72,12 @@ class Evaluator:
                 # For example error 503 or a timeout: record it and continue
                 print("   ERROR:", error)
                 result = {
-                    "found": False, "correct": False,
-                    "retrieval_hit": None, "answer": f"ERROR: {error}", "sources": "",
+                    "found": False,
+                    "correct": False,
+                    "retrieval_hit": None,
+                    "answer": f"ERROR: {error}",
+                    "sources": "",
+                    "error": True,
                 }
 
             # Keep the question information next to the result
