@@ -1,4 +1,5 @@
 from pathlib import Path
+import sys
 
 import pandas as pd
 
@@ -8,6 +9,7 @@ from easy_leaflet.evaluation import Evaluator
 from easy_leaflet.llm import LLMClient
 from easy_leaflet.loader import LeafletLoader
 from easy_leaflet.retriever import Retriever
+from easy_leaflet.prompts import PROMPT_V1, PROMPT_V2
 
 # Build the system, like in ask.py
 loader = LeafletLoader("data")
@@ -18,7 +20,13 @@ for name in loader.list_names():
 
 retriever = Retriever()
 retriever.index(chunks)
-assistant = LeafletAssistant(retriever, LLMClient())
+#assistant = LeafletAssistant(retriever, LLMClient())
+if len(sys.argv) > 1:
+    version = sys.argv[1]
+else:
+    version = "v1"
+prompts = {"v1": PROMPT_V1, "v2": PROMPT_V2}
+assistant = LeafletAssistant(retriever, LLMClient(), prompt=prompts[version])
 
 # Ask all the test questions
 questions = pd.read_csv("data/eval_questions.csv", encoding="utf-8")
@@ -32,7 +40,7 @@ answerable = valid[valid["answerable"]]
 not_answerable = valid[~valid["answerable"]]
 
 print()
-print("=== RESULTS: prompt v1 ===")
+print(f"=== RESULTS: prompt {version} ===")
 print(f"API errors:         {errors} of {len(results)} (not counted below)")
 if errors > 0:
     print("WARNING: some questions failed. Run again before trusting these numbers.")
@@ -44,6 +52,6 @@ print()
 
 # Save everything, to read it later
 Path("results").mkdir(exist_ok=True)
-results.to_csv("results/eval_prompt_v1.csv", index=False, encoding="utf-8-sig")
+results.to_csv(f"results/eval_prompt_{version}.csv", index=False, encoding="utf-8-sig")
 print()
-print("Saved to results/eval_prompt_v1.csv")
+print(f"Saved to results/eval_prompt_{version}.csv")
