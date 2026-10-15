@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+import time
 
 # The worker that talks to the LLM
 class LLMClient:
@@ -13,9 +14,19 @@ class LLMClient:
         self.client = genai.Client(http_options=types.HttpOptions(timeout=60000))
 
   
-    def ask(self, prompt):
-        # Send the prompt to the LLM and return the answer as text
-        interaction = self.client.interactions.create(  # sends prompt over the internet to Google. We tell it which model and what text.
-            model=self.model, input=prompt,
-        )
-        return interaction.output_text  # is only the answer tex
+    def ask(self, prompt, retries=3, wait_seconds=10):
+        # Send the prompt to the LLM and return the answer as text.
+        # If the API fails (timeout, error 503), wait and try again.
+        for attempt in range(1, retries + 1):
+            try:
+                interaction = self.client.interactions.create(
+                    model=self.model,
+                    input=prompt,
+                )
+                return interaction.output_text
+            except Exception as error:
+                if attempt == retries:
+                    raise
+                print(f"   LLM error (attempt {attempt} of {retries}): {error}")
+                print(f"   Waiting {wait_seconds} seconds before trying again...")
+                time.sleep(wait_seconds)
