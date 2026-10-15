@@ -2,6 +2,8 @@ from easy_leaflet.chunker import Chunker
 from easy_leaflet.loader import LeafletLoader
 from easy_leaflet.retriever import Retriever
 
+import pandas as pd
+
 loader = LeafletLoader("data")
 chunker = Chunker()
 chunks = []
@@ -9,7 +11,13 @@ for name in loader.list_names():
     chunks.extend(chunker.split(loader.load(name)))
 
 retriever = Retriever()
-retriever.index(chunks)
+
+# Medicine names from leaflets.csv, for example {"brufen": "Brufen 200 mg comprimidos..."}
+leaflets = pd.read_csv("data/leaflets.csv")
+titles = {}
+for row in leaflets.itertuples():
+    titles[row.name] = row.medicine
+retriever.index(chunks, titles=titles)
 
 # The 4 failed questions, and a short phrase that only the right chunk contains
 checks = [

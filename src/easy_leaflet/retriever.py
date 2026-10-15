@@ -10,13 +10,18 @@ class Retriever:
         self.chunks = []
         self.vectors = None
 
-    def index(self, chunks):
-        # Turn every chunk into a vector (done one time)
+    def index(self, chunks, titles=None):
+        # Turn every chunk into a vector (done one time).
+        # titles is optional, for example {"brufen": "Brufen 200 mg comprimidos..."}.
+        # The title is added only to the text used for the search;
+        # the LLM still receives the original chunk.
         self.chunks = chunks
         texts = []
         for chunk in chunks:
-            texts.append("passage: " + chunk.text)
-        
+            text = chunk.text
+            if titles is not None:
+                text = titles[chunk.leaflet_name] + "\n" + text
+            texts.append("passage: " + text)
         self.vectors = self.model.encode(texts, normalize_embeddings=True)
 
     def search(self, question, k=4, leaflet_name=None):

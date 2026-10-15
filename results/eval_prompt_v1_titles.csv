@@ -1,0 +1,31 @@
+﻿found,correct,retrieval_hit,answer,sources,error,id,leaflet,topic,question,answerable
+True,True,True,Não deve beber álcool durante o tratamento com ben-u-ron®. O álcool pode aumentar a toxicidade do paracetamol no fígado.,benuron 7; benuron 4; ,False,1,benuron,alcohol,Posso beber vinho enquanto tomo ben-u-ron?,True
+True,True,True,O ben-u-ron 500 mg destina-se a crianças com idade igual ou superior a 12 anos. Não é adequado para crianças com idade inferior a 12 anos.,benuron 9; benuron 5; ,False,2,benuron,children,A partir de que idade o meu filho pode tomar ben-u-ron 500?,True
+True,True,True,O medicamento está disponível em embalagens de 20 comprimidos.,benuron 17; benuron 16; ,False,3,benuron,package,Quantos comprimidos vêm na caixa?,True
+True,True,True,Não deve conservar o medicamento acima de 25 ºC.,benuron 16; benuron 15; ,False,4,benuron,storage,A que temperatura devo guardar os comprimidos?,True
+False,True,,Não encontrei esta informação no folheto.,,False,5,benuron,not_in_leaflet,Quanto custa uma embalagem?,False
+False,False,False,Não encontrei esta informação no folheto.,,False,6,brufen,dose,Quanto tempo tenho de esperar entre dois comprimidos de Brufen?,True
+True,True,True,"No máximo, pode tomar 1200 mg de ibuprofeno por dia, o que corresponde a 6 comprimidos de 200 mg por dia.",brufen 24; ,False,7,brufen,dose,Quantos comprimidos de Brufen posso tomar no máximo por dia?,True
+True,True,True,"Não, não deve tomar este medicamento nos últimos 3 meses de gravidez, pois pode ser prejudicial para o feto ou causar problemas no parto.",brufen 20; brufen 19; ,False,8,brufen,pregnancy,Estou grávida de 8 meses. Posso tomar Brufen?,True
+True,True,True,"Para um efeito máximo mais rápido, deve tomar o Brufen com o estômago vazio. Se tiver o estômago sensível, é recomendado tomá-lo com os alimentos.",brufen 19; ,False,9,brufen,food,Devo tomar o Brufen antes ou depois de comer?,True
+False,True,,Não encontrei esta informação no folheto.,,False,10,brufen,not_in_leaflet,O Brufen é melhor do que o ben-u-ron para as dores de cabeça?,False
+True,True,True,"O Cêgripe provoca sonolência. Por isso, recomenda-se precaução ao conduzir ou ao utilizar máquinas.",cegripe 9; ,False,11,cegripe,driving,Posso conduzir depois de tomar Cêgripe?,True
+True,True,True,"Não, o Cêgripe não é recomendado em crianças com idade inferior a 12 anos ou com peso inferior a 30 kg.",cegripe 11; cegripe 2; ,False,12,cegripe,children,O meu filho tem 10 anos. Pode tomar Cêgripe?,True
+True,True,False,"Pode tomar 1 a 2 comprimidos a cada 6 horas, até um máximo de 6 comprimidos por dia.",cegripe 10; cegripe 11; ,False,13,cegripe,dose,Quantos comprimidos de Cêgripe posso tomar por dia?,True
+True,True,True,"Não deve tomar bebidas alcoólicas enquanto durar o tratamento com Cêgripe, pois o álcool pode potenciar os efeitos sedativos e, se consome habitualmente bebidas alcoólicas, a toma do medicamento pode provocar lesões hepáticas.",cegripe 8; ,False,14,cegripe,alcohol,Posso beber uma cerveja enquanto tomo Cêgripe?,True
+False,True,,Não encontrei esta informação no folheto.,,False,15,cegripe,not_in_leaflet,Quantos minutos demora o Cêgripe a fazer efeito?,False
+True,True,True,"Não, não deve dar Imodium Rapid a crianças com menos de 6 anos de idade.",imodium 2; ,False,16,imodium,children,Posso dar Imodium Rapid ao meu filho de 4 anos?,True
+False,False,False,Não encontrei esta informação no folheto.,,False,17,imodium,how_to_take,Tenho de engolir o Imodium Rapid com água?,True
+True,True,True,"Para as crianças, a dose máxima para a diarreia aguda e crónica não deve exceder um máximo de 8 comprimidos por dia.",imodium 11; ,False,18,imodium,dose,Qual é o número máximo de comprimidos de Imodium Rapid por dia?,True
+True,True,True,Não deve conservar o Imodium Rapid acima de 30ºC.,imodium 17; ,False,19,imodium,storage,A que temperatura devo guardar o Imodium Rapid?,True
+False,True,,Não encontrei esta informação no folheto.,,False,20,imodium,not_in_leaflet,Qual é a farmácia mais barata para comprar Imodium Rapid?,False
+False,False,True,Não encontrei esta informação no folheto.,,False,21,minigeste,forgotten_dose,"Esqueci-me de tomar a pílula ontem à noite e só me lembrei agora, 8 horas depois. A pílula continua a proteger?",True
+True,True,True,"Sim. Se se esqueceu de um comprimido na semana 1, deve tomar precauções contracetivas adicionais (como o método de barreira) durante os 7 dias seguintes.",minigeste 37; ,False,22,minigeste,forgotten_dose,Esqueci-me de um comprimido na primeira semana da embalagem. Preciso de usar preservativo?,True
+False,False,True,Não encontrei esta informação no folheto.,,False,23,minigeste,vomiting,Vomitei duas horas depois de tomar a pílula. O que faço?,True
+True,True,True,"O risco de um ataque cardíaco ou acidente vascular cerebral pode aumentar com o aumento da idade (para além dos 35 anos) e se fumar. É aconselhada a parar de fumar. Se for incapaz de parar de fumar e tiver mais de 35 anos, o seu médico poderá aconselhá-la a utilizar um tipo diferente de contracetivo.",minigeste 22; ,False,24,minigeste,smoking,Fumo e tenho 38 anos. Posso tomar Minigeste?,True
+False,True,,Não encontrei esta informação no folheto.,,False,25,minigeste,not_in_leaflet,A Minigeste é comparticipada pelo SNS?,False
+True,True,True,Recomenda-se um período de pelo menos 8 horas entre a toma de zolpidem e a condução.,zolpidem 19; ,False,26,zolpidem,driving,Quantas horas tenho de esperar para conduzir depois de tomar?,True
+True,True,True,"Não. Como o zolpidem foi encontrado no leite materno, o Zolpidem Aurovitas não deve ser administrado a mulheres que estejam a amamentar.",zolpidem 18; ,False,27,zolpidem,breastfeeding,Posso tomar zolpidem se estiver a dar de mamar?,True
+True,True,True,Não. Não deve tomar outra dose durante a mesma noite.,zolpidem 6; ,False,28,zolpidem,dose,"Se não conseguir dormir, posso tomar outro comprimido na mesma noite?",True
+True,True,True,"O tratamento deve ser o mais curto possível. Em geral, dura um máximo de quatro semanas, incluindo a fase de redução gradual. Normalmente, a duração varia entre alguns dias a duas semanas.",zolpidem 20; zolpidem 23; zolpidem 22; ,False,29,zolpidem,duration,Durante quanto tempo posso tomar zolpidem?,True
+False,True,,Não encontrei esta informação no folheto.,,False,30,zolpidem,not_in_leaflet,Qual é a melhor marca de zolpidem?,False

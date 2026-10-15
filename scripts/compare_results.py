@@ -1,32 +1,39 @@
+import sys
+
 import pandas as pd
 
-v1 = pd.read_csv("results/eval_prompt_v1.csv")
-v2 = pd.read_csv("results/eval_prompt_v2.csv")
+# Example: python scripts\compare_results.py results\eval_prompt_v1.csv results\eval_prompt_v1_titles.csv
+first_file = sys.argv[1]
+second_file = sys.argv[2]
+first = pd.read_csv(first_file)
+second = pd.read_csv(second_file)
 
-# Put the two runs side by side, one line per question
-both = v1.merge(v2, on="id", suffixes=("_v1", "_v2"))
+both = first.merge(second, on="id", suffixes=("_a", "_b"))
 
-print(f"Accuracy v1: {v1['correct'].mean():.0%}")
-print(f"Accuracy v2: {v2['correct'].mean():.0%}")
+print(f"A = {first_file}")
+print(f"B = {second_file}")
+print()
+print(f"Accuracy A: {first['correct'].mean():.0%}")
+print(f"Accuracy B: {second['correct'].mean():.0%}")
 print()
 
-print("Fixed by v2 (wrong in v1, correct in v2):")
-fixed = both[~both["correct_v1"] & both["correct_v2"]]
+print("Fixed by B (wrong in A, correct in B):")
+fixed = both[~both["correct_a"] & both["correct_b"]]
 for row in fixed.itertuples():
-    print(f"- [{row.id}] {row.question_v1}")
+    print(f"- [{row.id}] {row.question_a}")
 print()
 
-print("Broken by v2 (correct in v1, wrong in v2):")
-broken = both[both["correct_v1"] & ~both["correct_v2"]]
+print("Broken by B (correct in A, wrong in B):")
+broken = both[both["correct_a"] & ~both["correct_b"]]
 for row in broken.itertuples():
-    print(f"- [{row.id}] {row.question_v1}")
+    print(f"- [{row.id}] {row.question_a}")
+
 
 def count_words(text):
     return len(str(text).split())
 
 
 def count_sources(text):
-    # sources look like "minigeste 9; minigeste 12; ", so we count the ";"
     if pd.isna(text):
         return 0
     return str(text).count(";")
@@ -34,7 +41,7 @@ def count_sources(text):
 
 print()
 print("Answers that were found (found = True):")
-for name, run in [("v1", v1), ("v2", v2)]:
+for name, run in [("A", first), ("B", second)]:
     found = run[run["found"]]
     words = found["answer"].apply(count_words).mean()
     sources = found["sources"].apply(count_sources).mean()
