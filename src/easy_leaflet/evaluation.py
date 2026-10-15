@@ -1,5 +1,6 @@
-import time
+import sys
 
+import time
 import pandas as pd
 
 from easy_leaflet.assistant import ERROR_MESSAGE
