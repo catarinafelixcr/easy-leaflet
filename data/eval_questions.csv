@@ -21,7 +21,7 @@ id,leaflet,topic,question,answerable,keywords,source
 20,imodium,not_in_leaflet,Qual é a farmácia mais barata para comprar Imodium Rapid?,no,,
 21,minigeste,forgotten_dose,"Esqueci-me de tomar a pílula ontem à noite e só me lembrei agora, 8 horas depois. A pílula continua a proteger?",yes,12 horas|doze horas|fiabilidade,"Se estiver menos de 12 horas atrasada na toma do comprimido, a fiabilidade da pílula é mantida."
 22,minigeste,forgotten_dose,Esqueci-me de um comprimido na primeira semana da embalagem. Preciso de usar preservativo?,yes,7 dias|sete dias|barreira,Tome precauções contracetivas adicionais (método de barreira) durante os 7 dias seguintes.
-23,minigeste,vomiting,Vomitei duas horas depois de tomar a pílula. O que faço?,yes,esquec,"Se vomitar nas 3 a 4 horas após tomar o comprimido, é como se esquecesse de tomar um comprimido."
+23,minigeste,vomiting,Vomitei duas horas depois de tomar a pílula. O que faço?,yes,esquec;3 a 4 horas|três a quatro horas,"Se vomitar nas 3 a 4 horas após tomar o comprimido, é como se esquecesse de tomar um comprimido."
 24,minigeste,smoking,Fumo e tenho 38 anos. Posso tomar Minigeste?,yes,35|diferente,"Se for incapaz de parar de fumar e tiver mais de 35 anos, o seu médico poderá aconselhá-la a utilizar um tipo diferente de contracetivo;"
 25,minigeste,not_in_leaflet,A Minigeste é comparticipada pelo SNS?,no,,
 26,zolpidem,driving,Quantas horas tenho de esperar para conduzir depois de tomar?,yes,8 horas|oito horas,Recomenda-se um período de pelo menos 8 horas entre a toma de zolpidem e a condução
