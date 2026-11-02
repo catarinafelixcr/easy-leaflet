@@ -146,3 +146,25 @@ The first run downloads the embedding model (about 470 MB) once.
 ## License
 
 MIT
+### Search experiments, and why they stopped
+
+All errors left after prompt v2 came from the search, not from the LLM.
+For two Brufen questions, the right chunk ranked 22nd of 39: the chunk says
+"ibuprofeno", but the question says "Brufen". Removing "Brufen" from the
+question moved that chunk to rank 2.
+
+Fix: the medicine name is added to every chunk, only for the search.
+The retrieval hit rate went from 83% to 88%. Accuracy stayed at about 87%:
+the change fixed 2 questions and broke 1 (a fourth one changed because of
+LLM randomness, not the search).
+
+The experiments stopped here, on purpose:
+
+1. **The gains are now smaller than the noise.** One question is about 3
+   points on 30 questions, so a small real gain cannot be told apart from luck.
+2. **Risk of overfitting.** Tuning the search until these 30 questions pass
+   would make the number optimistic. A bigger test set is needed first.
+3. **The remaining errors are safe.** In the failed questions the app says it
+   did not find the answer; it does not invent one.
+4. **Next ideas:** chunks that start with their section title, a bigger test
+   set, and a search that combines keywords with embeddings.
