@@ -4,7 +4,7 @@ Ask questions about Portuguese medicine leaflets and get a simple answer, with t
 
 > **Warning:** This is a study project. It is not medical advice! Always ask your doctor or pharmacist.
 
-**Status:** work in progress. The question-answering pipeline works end to end and has tests. The evaluation is being run; the demo comes next.
+**Status:** Completed. The question-answering pipeline works end to end, evaluation is complete, and a Streamlit demo is available (you only need a free api key of gemini).
 
 ## Goal
 
@@ -78,7 +78,15 @@ The test set was written and checked by a person against the PDFs, not by an LLM
 
 ## Results
 
-Coming soon: accuracy of prompt version 1, then a comparison with prompt version 2.
+87% accuracy.
+
+<p align="center">
+  <img src="src/imgs/Screenshot%202026-11-11%20144100.png" width="32%">
+  <img src="src/imgs/Screenshot%202026-11-11%20144420.png" width="32%">
+  <img src="src/imgs/Screenshot%202026-11-11%20144459.png" width="32%">
+</p>
+
+
 
 ## Tests
 
@@ -123,19 +131,25 @@ easy-leaflet/
 3. Download the leaflet PDFs listed in [`data/leaflets.csv`](data/leaflets.csv) and save them in `data/` with the names from the `name` column.
 4. Create a free Gemini API key in [Google AI Studio](https://aistudio.google.com/api-keys). No credit card is needed.
 5. Copy `.env.example` to a new file called `.env` and paste your key in it. The full guide, with the free limits and the safety rules, is in [`docs/API_KEY.md`](docs/API_KEY.md).
-6. Ask a few questions:
+
+6. Run the Streamlit web demo:
+   ```
+   streamlit run app.py
+   ```
+
+7. Ask a few questions:
 
    ```
    python scripts\ask.py
    ```
 
-7. Run the evaluation (about 3 minutes):
+8. Run the evaluation (about 3 minutes):
 
    ```
    python scripts\evaluate.py
    ```
 
-8. Run the tests:
+9. Run the tests:
 
    ```
    pytest -v
